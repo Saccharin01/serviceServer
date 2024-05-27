@@ -32,14 +32,23 @@ let server = http.createServer((req, res)=>{
           })
         }
         else{
+          res.writeHead(200, {'content-Type': 'text/html'})
           res.write(data)
           res.end();
         }
       })
     }
     else if(req.url.startsWith(`/core`)){
+      fs.readFile(`public/core.js`, (err, data)=>{
+        if(err){
+          console.log(`readFile error : ${err}`);
+        }else{
+          res.writeHead(200, {'content-Type': 'application/javaScript'});
+          res.write(data);
+          res.end();
+        }
+      })
       console.log(`checked`)
-
     }
   }
 
