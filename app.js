@@ -48,8 +48,11 @@ let server = http.createServer((req, res)=>{
           res.end();
         }
       })
-      console.log(`checked`)
+      // console.log(`checked`)
     }
+  }
+  if(req.method === 'POST'){
+    console.log(`method Changed`)
   }
 
 
