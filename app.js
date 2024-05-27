@@ -51,28 +51,17 @@ let server = http.createServer((req, res)=>{
       // console.log(`checked`)
     }
   }
-  if(req.method === 'POST'){
-    console.log(`method Changed`)
+  else if(req.method === 'POST'){
     console.log(req.url)
-    if(req.url === `/submit`){
+    if(req.url === '/submit'){
       console.log(`process tracking`)
-      let body = ""
-      req.on(`data`,(chunk) => {
+      let body = "";
+      req.on('data', (chunk)=>{
         body += chunk.toString();
-      });
-      xml.open('post', 'http://localhost:8088/')
-      xml.setRequestHeader('content-Type', 'application/json')
-      xml.resquestType = "json";
-      xml.send(body)
-
-
-    };
-
-
-
+        console.log(body)
+      })
+    }
   }
-
-
 });
 
 let PORT = 8080
