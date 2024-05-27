@@ -8,7 +8,29 @@ console.log(htmlTemplate())
 let server = http.createServer((req, res)=>{
   if(req.method ===`GET`){
     if(req.url === `/`){
+      try {
+        fs.readFile(`html/index.html`, htmlTemplate(), (err)=>{
+          if(err){
+            console.log(err)
+            console.log(`err occur on fs.WriteFile`)
+          };
+        })
+      } catch (error) {
+        fs.mkdir(`html`, (err)=>{
+          console.log(err)
+          console.log(`mkdir error occured`)
+        })
+        fs.writeFile(`html/index.html`, htmlTemplate(), (err)=>{
+          if(err){
+            console.log(`error occured`)
+          }
+        })
+        
+      }
 
     };
   };
 })
+let PORT = 8080
+server.listen(`${PORT}`)
+console.log(`server running on: http://localhost:${PORT}/`)
