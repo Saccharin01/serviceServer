@@ -58,18 +58,16 @@ let server = http.createServer((req, res)=>{
       let body = "";
       req.on('data', (chunk)=>{
         body += chunk.toString();
-        // console.log(body)
+        console.log(body)
+        // * body 값에 로드 된 것 확인
         const qs = require(`node:querystring`)
         let splitbody = body.split(`=`)[1]
         // console.log(splitbody)
-        qs.parse(splitbody)
-        let a = qs.parse(body)
-        console.log(splitbody)
-        console.log(a)
-        console.log(typeof(a))
-        let jsonData = JSON.stringify(a)
-        console.log(111)
-        console.log(jsonData)
+        // qs.parse(splitbody)
+        let parseData = qs.parse(body)
+        let jsonData = JSON.stringify(parseData)
+        console.log(jsonData, "success")
+
       })
 
 
