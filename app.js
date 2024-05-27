@@ -9,17 +9,23 @@ let server = http.createServer((req, res)=>{
   if(req.method ===`GET`){
     console.log(req.url)
     if(req.url === `/`){
-      fs.readFile(`html/index.html`, 'utf-8', (err, data)=>{
+      fs.readFile(`public/html/index.html`, 'utf-8', (err, data)=>{
         if(err){
-          fs.mkdir(`html`, (err)=>{
+          fs.mkdir(`public`, (err)=>{
             if(err){
-              console.log(`error occur: ${err}`)
+              console.log(`error occur on public dir : ${err}`)
             }else{
-              fs.writeFile(`html/index.html`, htmlTemplate(`testField`), `utf-8`, (err)=>{
+              fs.mkdir(`public/html`, (err)=>{
                 if(err){
-                  return console.log(err)
+                  console.log(`error occur on public>html : ${err}`)
                 }else{
-                  console.log(`All Process Success`)
+                  fs.writeFile(`html/index.html`, htmlTemplate(`testField`), `utf-8`, (err)=>{
+                    if(err){
+                      return console.log(err)
+                    }else{
+                      console.log(`All Process Success`)
+                    }
+                  })
                 }
               })
             }
@@ -33,7 +39,7 @@ let server = http.createServer((req, res)=>{
     }
     else if(req.url.startsWith(`/core`)){
       console.log(`checked`)
-      
+
     }
   }
 
