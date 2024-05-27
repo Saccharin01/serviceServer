@@ -13,21 +13,21 @@ let server = http.createServer((req, res)=>{
         if(err){
           fs.mkdir(`public`, (err)=>{
             if(err){
-              console.log(`error occur on public dir : ${err}`)
-            }else{
               fs.mkdir(`public/html`, (err)=>{
                 if(err){
-                  console.log(`error occur on public>html : ${err}`)
-                }else{
-                  fs.writeFile(`html/index.html`, htmlTemplate(`testField`), `utf-8`, (err)=>{
+                  fs.writeFile(`public/html/index.html`, htmlTemplate(`testField`), `utf-8`, (err)=>{
                     if(err){
                       return console.log(err)
                     }else{
                       console.log(`All Process Success`)
                     }
                   })
+                }else{
+                  console.log(`error occur on public>html : ${err}`)
                 }
               })
+            }else{
+              console.log(`error occur on Public dir : ${err}`)
             }
           })
         }
