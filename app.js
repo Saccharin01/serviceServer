@@ -7,6 +7,7 @@ const htmlTemplate = require(`../../module/module.HTMLtemplate`)
 // console.log(htmlTemplate())
 let server = http.createServer((req, res)=>{
   if(req.method ===`GET`){
+    console.log(req.url)
     if(req.url === `/`){
       fs.readFile(`html/index.html`, 'utf-8', (err, data)=>{
         if(err){
@@ -29,6 +30,9 @@ let server = http.createServer((req, res)=>{
           res.end();
         }
       })
+    }
+    else if(req.url.startsWith(`/core`)){
+      // console.log(`checked`)
     }
   }
 
