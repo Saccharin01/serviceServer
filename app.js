@@ -53,6 +53,12 @@ let server = http.createServer((req, res)=>{
   }
   if(req.method === 'POST'){
     console.log(`method Changed`)
+    console.log(req.url)
+    xml.open('post', 'http://localhost:8088/')
+    xml.setRequestHeader('content-Type', 'application/json')
+    xml.responseType = "json";
+    xml.send()
+
   }
 
 
