@@ -54,10 +54,21 @@ let server = http.createServer((req, res)=>{
   if(req.method === 'POST'){
     console.log(`method Changed`)
     console.log(req.url)
-    xml.open('post', 'http://localhost:8088/')
-    xml.setRequestHeader('content-Type', 'application/json')
-    xml.responseType = "json";
-    xml.send()
+    if(req.url === `/submit`){
+      console.log(`process tracking`)
+      let body = ""
+      req.on(`data`,(chunk) => {
+        body += chunk.toString();
+      });
+      xml.open('post', 'http://localhost:8088/')
+      xml.setRequestHeader('content-Type', 'application/json')
+      xml.responseType = "json";
+      xml.send()
+
+
+    };
+
+
 
   }
 
