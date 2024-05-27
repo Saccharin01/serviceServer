@@ -4,33 +4,37 @@ const xml = new XMLHttpRequest();
 const fs = require(`fs`)
 const htmlTemplate = require(`../../module/module.HTMLtemplate`)
 
-console.log(htmlTemplate())
+// console.log(htmlTemplate())
 let server = http.createServer((req, res)=>{
   if(req.method ===`GET`){
     if(req.url === `/`){
-      try {
-        fs.readFile(`html/index.html`, htmlTemplate(), (err)=>{
-          if(err){
-            console.log(err)
-            console.log(`err occur on fs.WriteFile`)
-          };
-        })
-      } catch (error) {
-        fs.mkdir(`html`, (err)=>{
-          console.log(err)
-          console.log(`mkdir error occured`)
-        })
-        fs.writeFile(`html/index.html`, htmlTemplate(), (err)=>{
-          if(err){
-            console.log(`error occured`)
-          }
-        })
-        
-      }
+      fs.readFile(`html/index.html`, 'utf-8', (err, data)=>{
+        if(err){
+          fs.mkdir(`html`, (err)=>{
+            if(err){
+              console.log(`error occur: ${err}`)
+            }else{
+              fs.writeFile(`html/index.html`, htmlTemplate(`testField`), `utf-8`, (err)=>{
+                if(err){
+                  return console.log(err)
+                }else{
+                  console.log(`All Process Success`)
+                }
+              })
+            }
+          })
+        }
+        else{
+          res.write(data)
+          res.end();
+        }
+      })
+    }
+  }
 
-    };
-  };
-})
+
+});
+
 let PORT = 8080
 server.listen(`${PORT}`)
 console.log(`server running on: http://localhost:${PORT}/`)
