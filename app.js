@@ -32,7 +32,8 @@ let server = http.createServer((req, res)=>{
       })
     }
     else if(req.url.startsWith(`/core`)){
-      // console.log(`checked`)
+      console.log(`checked`)
+      
     }
   }
 
