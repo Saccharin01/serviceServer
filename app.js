@@ -62,8 +62,8 @@ let server = http.createServer((req, res)=>{
       });
       xml.open('post', 'http://localhost:8088/')
       xml.setRequestHeader('content-Type', 'application/json')
-      xml.responseType = "json";
-      xml.send()
+      xml.resquestType = "json";
+      xml.send(body)
 
 
     };
