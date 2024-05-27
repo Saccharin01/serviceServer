@@ -58,8 +58,21 @@ let server = http.createServer((req, res)=>{
       let body = "";
       req.on('data', (chunk)=>{
         body += chunk.toString();
-        console.log(body)
+        // console.log(body)
+        const qs = require(`node:querystring`)
+        let splitbody = body.split(`=`)[1]
+        // console.log(splitbody)
+        qs.parse(splitbody)
+        let a = qs.parse(body)
+        console.log(splitbody)
+        console.log(a)
+        console.log(typeof(a))
+        let jsonData = JSON.stringify(a)
+        console.log(111)
+        console.log(jsonData)
       })
+
+
     }
   }
 });
