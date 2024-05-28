@@ -1,6 +1,7 @@
 let root = document.getElementById(`root`)
 let form = document.createElement(`form`)
 let input = document.createElement(`input`)
+let controlArray = [false, false, false, false, false]
 
 root.appendChild(form)
 form.appendChild(input)
