@@ -15,8 +15,7 @@ for(let i = 0; i < controlArray.length; i++){
   input.setAttribute(`placeHolder`, '여기에 입력해주세요')
   input.setAttribute(`name`, `submitData`)
   input.setAttribute(`type`, inputType[i])
-
-
+  let div = document.createElement(`div`)
 }
 form.style.height = "90vh"
 form.style.width = "90vw"
