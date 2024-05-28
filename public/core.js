@@ -19,7 +19,7 @@ let testform = document.getElementsByTagName(`form`)
 let test = document.createElement(`button`)
 
 console.log(testform)
-root.appendChild(test)
+form.appendChild(test)
 test.setAttribute(`type`, `buttonAction`)
 
 // ! 이메일 처리 보안사항 발생. 다만, 해당 부분은 현 작업에서는 고려사항이 아님.
