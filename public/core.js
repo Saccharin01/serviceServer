@@ -1,14 +1,14 @@
 let root = document.getElementById(`root`)
-let form = document.createElement(`form`)
 let controlArray = [false, false, false, false, false]
 let inputType = [`userId`, `pw`, `pwConfirm`, `email`, `phoneNum`]
-
-root.appendChild(form)
-form.setAttribute(`action`, `submit`)
-form.setAttribute(`method`, `post`)
+let inputName = []
 
 
 for(let i = 0; i < controlArray.length; i++){
+  let form = document.createElement(`form`)
+  root.appendChild(form)
+  form.setAttribute(`action`, `submit`)
+  form.setAttribute(`method`, `post`)
   let input = document.createElement(`input`)
   form.appendChild(input);
   // input.setAttribute(`type`, 'text')
