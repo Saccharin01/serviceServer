@@ -17,8 +17,14 @@ for(let i = 0; i < controlArray.length; i++){
   input.setAttribute(`name`, inputName[i])
   input.setAttribute(`type`, inputType[i])
 }
+let testform = document.getElementsByTagName(`form`)
+let test = document.createElement(`button`)
 
-// ! 이메일 처리 보안사항. 다만, 해당 부분은 현 작업에서는 고려사항이 아님.
+console.log(testform)
+root.appendChild(test)
+test.setAttribute(`type`, `buttonAction`)
+
+// ! 이메일 처리 보안사항 발생. 다만, 해당 부분은 현 작업에서는 고려사항이 아님.
 // ! 무시하고 동작 기저의 완성도를 높힐 것.
 let input = document.getElementsByTagName(`input`)
 input[3].setAttribute(`autocomplete`, `off`)
