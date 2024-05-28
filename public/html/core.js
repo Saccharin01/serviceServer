@@ -16,8 +16,13 @@ for(let i = 0; i < controlArray.length; i++){
   input.setAttribute(`name`, `submitData`)
   input.setAttribute(`type`, inputType[i])
 
-}
 
+}
+form.style.height = "90vh"
+form.style.width = "90vw"
+form.style.display = "flex"
+// form.style.justifyContent = "center"
+// form.style.alignItems = "center"
 // inputType.forEach((ele)=>{
 //   ele.setAttribute
 //   console.log(ele)
