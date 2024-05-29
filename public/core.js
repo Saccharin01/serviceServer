@@ -47,11 +47,13 @@ root.appendChild(main)
 main.setAttribute(`class`,'main')
 main.style.backgroundColor = "#D6BBBB"
 // console.log(main)
-main.style.height = `100%`
-main.style.width = `100%`
+main.style.height = `90vh`
+main.style.width = `100vw`
 main.style.display = 'flex'
 // main.style.gridTemplateRows = `repeat(3, 1fr)`
 // main.style.gridTemplateColumns = `repeat(2, 1fr)`
+root.style.width = `100vw`
+root.style.height = `100vh`
 
 for(let i = 0; i < controlArray.length; i++){
   let div = document.createElement(`div`)
@@ -59,24 +61,30 @@ for(let i = 0; i < controlArray.length; i++){
   main.appendChild(form)
   form.appendChild(div)
   div.appendChild(input);
-  div.style.width = `90vw`
-  div.style.height = `20vh`
+  // div.style.width = `100vw`
+  div.style.height = `10vh`
   div.style.display = `flex`
   div.style.paddingTop = `20px`
   div.style.paddingBottom = `20px`
+  div.style.justifyContent = `space-around`
+  div.style.alignItems = `center`
+  // div.style.justifyContent = `center`
   // input.setAttribute(`type`, 'text')
   input.setAttribute(`placeHolder`, '여기에 입력해주세요')
   input.setAttribute(`name`, inputType[i])
   input.setAttribute(`type`, inputType[i])
+  // input.style.width = `90vw`
+  // input.style.height = `5vh`
   let divSensor = document.createElement(`div`)
+  divSensor.setAttribute(`class`, `sensor`)
   div.appendChild(divSensor)
+  divSensor.style.backgroundColor = `red`
+  divSensor.style.width = `30px`
+  divSensor.style.height = `30px`
 }
-divSensor[i].style.backgroundColor = `red`
-divSensor[i].style.width = `30px`
-divSensor[i].style.height = `30px`
+
 let testform = document.getElementsByTagName(`form`)
 let test = document.createElement(`button`)
-
 console.log(testform)
 form.appendChild(test)
 test.setAttribute(`type`, `buttonAction`)
