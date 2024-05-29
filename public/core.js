@@ -36,7 +36,12 @@ header.lastChild.style.backgroundColor = "#cccccc"
 
 let mainContent = document.createElement(`div`)
 root.appendChild(mainContent)
-mainContent.setAttribute(`class`,'body')
+mainContent.setAttribute(`class`,'main')
+mainContent.style.backgroundColor = "#D6BBBB"
+// console.log(mainContent)
+mainContent.style.display = 'flex'
+// mainContent.style.gridTemplateRows = `repeat(3, 1fr)`
+// mainContent.style.gridTemplateColumns = `repeat(2, 1fr)`
 
 for(let i = 0; i < controlArray.length; i++){
   let div = document.createElement(`div`)
@@ -55,6 +60,7 @@ let test = document.createElement(`button`)
 console.log(testform)
 form.appendChild(test)
 test.setAttribute(`type`, `buttonAction`)
+test.style.display = "none"
 
 
 
