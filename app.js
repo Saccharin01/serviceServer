@@ -15,7 +15,7 @@ let server = http.createServer((req, res)=>{
             if(err){
               fs.mkdir(`public/html`, (err)=>{
                 if(err){
-                  fs.writeFile(`public/html/index.html`, htmlTemplate(`testField`), `utf-8`, (err)=>{
+                  fs.writeFile(`public/html/index.html`, htmlTemplate(``), `utf-8`, (err)=>{
                     if(err){
                       return console.log(err)
                     }else{
