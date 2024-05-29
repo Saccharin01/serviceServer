@@ -7,14 +7,16 @@ let body = document.querySelector(`body`)
 
 form.setAttribute(`action`, `submit`)
 form.setAttribute(`method`, `post`)
+form.style.width = `100%`
+form.style.height = `100%`
 root.appendChild(form)
 
 console.log(body)
 // todo css style control
 body.style.margin = "0px"
 body.style.padding = "0px"
-root.style.height = `90vh` 
-root.style.width =  `90vw`
+// root.style.height = `90vh` 
+// root.style.width =  `90vw`
 // todo
 
 let header = document.createElement(`div`)
@@ -34,21 +36,25 @@ header.lastChild.style.backgroundColor = "#cccccc"
 
 
 
-let mainContent = document.createElement(`div`)
-root.appendChild(mainContent)
-mainContent.setAttribute(`class`,'main')
-mainContent.style.backgroundColor = "#D6BBBB"
-// console.log(mainContent)
-mainContent.style.display = 'flex'
-// mainContent.style.gridTemplateRows = `repeat(3, 1fr)`
-// mainContent.style.gridTemplateColumns = `repeat(2, 1fr)`
+let main = document.createElement(`div`)
+root.appendChild(main)
+main.setAttribute(`class`,'main')
+main.style.backgroundColor = "#D6BBBB"
+// console.log(main)
+main.style.height = `100%`
+main.style.width = `100%`
+main.style.display = 'flex'
+// main.style.gridTemplateRows = `repeat(3, 1fr)`
+// main.style.gridTemplateColumns = `repeat(2, 1fr)`
 
 for(let i = 0; i < controlArray.length; i++){
   let div = document.createElement(`div`)
   let input = document.createElement(`input`)
-  mainContent.appendChild(form)
+  main.appendChild(form)
   form.appendChild(div)
   div.appendChild(input);
+  div.style.width = `90vw`
+  div.style.height = `20vh`
   // input.setAttribute(`type`, 'text')
   input.setAttribute(`placeHolder`, '여기에 입력해주세요')
   input.setAttribute(`name`, inputType[i])
