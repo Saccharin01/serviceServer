@@ -8,8 +8,11 @@ form.setAttribute(`method`, `post`)
 root.appendChild(form)
 
 for(let i = 0; i < controlArray.length; i++){
+  let div = document.createElement(`div`)
   let input = document.createElement(`input`)
-  form.appendChild(input);
+  root.appendChild(form)
+  form.appendChild(div)
+  div.appendChild(input);
   // input.setAttribute(`type`, 'text')
   input.setAttribute(`placeHolder`, '여기에 입력해주세요')
   input.setAttribute(`name`, inputType[i])
