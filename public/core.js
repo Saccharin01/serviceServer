@@ -1,5 +1,5 @@
 let controlArray = [false, false, false, false, false]
-let inputType = [`userId`, `pw`, `pwConfirm`, `email`, `phoneNum`]
+let inputType = [`textarea`, `pw`, `pwConfirm`, `email`, `phoneNum`]
 
 let root = document.getElementById(`root`)
 let form = document.createElement(`form`)
@@ -28,10 +28,16 @@ for(let i = 0; i < 2; i++){
 }
 header.style.display = "flex"
 header.style.backgroundColor = "#D67B7B"
+header.style.height = "10vh"
+header.style.justifyContent = `space-around`
+header.style.alignItems = `center`
 header.lastChild.style.width = "10vw"
 header.lastChild.style.height = "5vh"
 header.lastChild.style.backgroundColor = "#cccccc"
 
+header.children[0].style.backgroundColor = "#D6BBBB"
+header.children[0].style.width = "80%"
+header.children[0].style.height = "60%"
 
 
 
@@ -55,10 +61,19 @@ for(let i = 0; i < controlArray.length; i++){
   div.appendChild(input);
   div.style.width = `90vw`
   div.style.height = `20vh`
+  div.style.display = `flex`
+  div.style.paddingTop = `20px`
+  div.style.paddingBottom = `20px`
   // input.setAttribute(`type`, 'text')
   input.setAttribute(`placeHolder`, '여기에 입력해주세요')
   input.setAttribute(`name`, inputType[i])
   input.setAttribute(`type`, inputType[i])
+  let divSensor = document.createElement(`div`)
+  div.appendChild(divSensor)
+  divSensor.style.backgroundColor = `red`
+  divSensor.style.
+  divSensor.style
+
 }
 let testform = document.getElementsByTagName(`form`)
 let test = document.createElement(`button`)
