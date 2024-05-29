@@ -73,8 +73,8 @@ for(let i = 0; i < controlArray.length; i++){
   input.setAttribute(`placeHolder`, '여기에 입력해주세요')
   input.setAttribute(`name`, inputType[i])
   input.setAttribute(`type`, inputType[i])
-  // input.style.width = `90vw`
-  // input.style.height = `5vh`
+  input.style.width = `60vw`
+  input.style.height = `5vh`
   let divSensor = document.createElement(`div`)
   divSensor.setAttribute(`class`, `sensor`)
   div.appendChild(divSensor)
