@@ -3,9 +3,18 @@ let inputType = [`userId`, `pw`, `pwConfirm`, `email`, `phoneNum`]
 
 let root = document.getElementById(`root`)
 let form = document.createElement(`form`)
+let body = document.querySelector(`body`)
 form.setAttribute(`action`, `submit`)
 form.setAttribute(`method`, `post`)
 root.appendChild(form)
+
+console.log(body)
+// todo css style control
+body.style.margin = "0px"
+body.style.padding = "0"
+root.style.height = `20vh` 
+root.style.width =  `80vw`
+// todo
 
 let header = document.createElement(`div`)
 root.appendChild(header)
@@ -16,12 +25,12 @@ for(let i = 0; i < 2; i++){
 }
 
 
+
+
+
 let mainContent = document.createElement(`div`)
 root.appendChild(mainContent)
 mainContent.setAttribute(`class`,'body')
-
-
-
 
 for(let i = 0; i < controlArray.length; i++){
   let div = document.createElement(`div`)
