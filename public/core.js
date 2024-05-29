@@ -1,16 +1,32 @@
-let root = document.getElementById(`root`)
 let controlArray = [false, false, false, false, false]
 let inputType = [`userId`, `pw`, `pwConfirm`, `email`, `phoneNum`]
 
+let root = document.getElementById(`root`)
 let form = document.createElement(`form`)
 form.setAttribute(`action`, `submit`)
 form.setAttribute(`method`, `post`)
 root.appendChild(form)
 
+let header = document.createElement(`div`)
+root.appendChild(header)
+header.setAttribute(`class`, `header`)
+for(let i = 0; i < 2; i++){
+  let div = document.createElement(`div`)
+  header.appendChild(div)
+}
+
+
+let mainContent = document.createElement(`div`)
+root.appendChild(mainContent)
+mainContent.setAttribute(`class`,'body')
+
+
+
+
 for(let i = 0; i < controlArray.length; i++){
   let div = document.createElement(`div`)
   let input = document.createElement(`input`)
-  root.appendChild(form)
+  mainContent.appendChild(form)
   form.appendChild(div)
   div.appendChild(input);
   // input.setAttribute(`type`, 'text')
