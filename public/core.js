@@ -70,11 +70,10 @@ for(let i = 0; i < controlArray.length; i++){
   input.setAttribute(`type`, inputType[i])
   let divSensor = document.createElement(`div`)
   div.appendChild(divSensor)
-  divSensor.style.backgroundColor = `red`
-  divSensor.style.
-  divSensor.style
-
 }
+divSensor[i].style.backgroundColor = `red`
+divSensor[i].style.width = `30px`
+divSensor[i].style.height = `30px`
 let testform = document.getElementsByTagName(`form`)
 let test = document.createElement(`button`)
 
