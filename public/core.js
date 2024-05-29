@@ -4,6 +4,7 @@ let inputType = [`userId`, `pw`, `pwConfirm`, `email`, `phoneNum`]
 let root = document.getElementById(`root`)
 let form = document.createElement(`form`)
 let body = document.querySelector(`body`)
+
 form.setAttribute(`action`, `submit`)
 form.setAttribute(`method`, `post`)
 root.appendChild(form)
@@ -11,9 +12,9 @@ root.appendChild(form)
 console.log(body)
 // todo css style control
 body.style.margin = "0px"
-body.style.padding = "0"
-root.style.height = `20vh` 
-root.style.width =  `80vw`
+body.style.padding = "0px"
+root.style.height = `90vh` 
+root.style.width =  `90vw`
 // todo
 
 let header = document.createElement(`div`)
@@ -23,6 +24,11 @@ for(let i = 0; i < 2; i++){
   let div = document.createElement(`div`)
   header.appendChild(div)
 }
+header.style.display = "flex"
+header.style.backgroundColor = "#D67B7B"
+header.lastChild.style.width = "10vw"
+header.lastChild.style.height = "5vh"
+header.lastChild.style.backgroundColor = "#cccccc"
 
 
 
@@ -49,6 +55,8 @@ let test = document.createElement(`button`)
 console.log(testform)
 form.appendChild(test)
 test.setAttribute(`type`, `buttonAction`)
+
+
 
 // ! 이메일 처리 보안사항 발생. 다만, 해당 부분은 현 작업에서는 고려사항이 아님.
 // ! 무시하고 동작 기저의 완성도를 높힐 것.
