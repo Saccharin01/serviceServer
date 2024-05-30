@@ -1,5 +1,5 @@
 let controlArray = [false, false, false, false, false]
-let inputType = [`textarea`, `pw`, `pwConfirm`, `email`, `phoneNum`]
+let inputType = [`userId`, `pw`, `pwConfirm`, `email`, `phoneNum`]
 
 let root = document.getElementById(`root`)
 let form = document.createElement(`form`)
