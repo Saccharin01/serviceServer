@@ -53,7 +53,7 @@ let server = http.createServer((req, res)=>{
   }
   else if(req.method === 'POST'){
     console.log(req.url)
-    if(res){
+    if(res.url){ // ? 이메터?
       console.log(`!!!!`)
     }
     if(req.url === '/submit'){
@@ -78,7 +78,8 @@ let server = http.createServer((req, res)=>{
         //console.log(jsonData, "success")
 
 
-        xml.open(`post`, `http://192.168.100.69:8088`)
+        // xml.open(`post`, `http://192.168.100.69:8088`)
+        xml.open(`post`, `http://localhost:8088`)
         xml.setRequestHeader(`content-type`, `application/json`)
         xml.send(jsonData)
         //console.log(`process Success!!`)
