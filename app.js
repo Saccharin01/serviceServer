@@ -52,7 +52,10 @@ let server = http.createServer((req, res)=>{
     }
   }
   else if(req.method === 'POST'){
-    //console.log(req.url)
+    console.log(req.url)
+    if(res){
+      console.log(`!!!!`)
+    }
     if(req.url === '/submit'){
       //console.log(`process tracking`)
       let body = "";
@@ -79,7 +82,11 @@ let server = http.createServer((req, res)=>{
         xml.setRequestHeader(`content-type`, `application/json`)
         xml.send(jsonData)
         //console.log(`process Success!!`)
-
+      })
+      req.on('load', (data)=>{
+        if(data.statusCode === 200){
+          console.log(`catch`)
+        }
       })
     }
   }
@@ -87,4 +94,4 @@ let server = http.createServer((req, res)=>{
 
 let PORT = 8080
 server.listen(`${PORT}`)
-//console.log(`server running on: http://localhost:${PORT}/`)
+console.log(`server running on: http://localhost:${PORT}/`)
