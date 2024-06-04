@@ -97,6 +97,19 @@ test.style.display = "none"
 let input = document.getElementsByTagName(`input`)
 input[3].setAttribute(`autocomplete`, `off`)
 
+let test22 = document.querySelector("#root > div.main > form > div:nth-child(1) > input")
+
+test22.addEventListener('blur',(e)=>{
+  console.log(typeof(e.target.value))
+  if(typeof(e.target.value)==='string'){
+    console.dir(e.target)
+    console.log(e.target.value)
+    controlArray[0]=true
+    console.log(controlArray)
+  }
+})
+
+console.log(controlArray)
 // inputType.forEach((ele)=>{
 //   ele.setAttribute
 //   console.log(ele)
