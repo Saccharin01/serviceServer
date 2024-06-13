@@ -79,7 +79,7 @@ let server = http.createServer((req, res)=>{
 
 
         // xml.open(`post`, `http://192.168.100.69:8088`)
-        xml.open(`post`, `http://localhost:8088`)
+        xml.open(`post`, `http://localhost:8081`)
         xml.setRequestHeader(`content-type`, `application/json`)
         xml.send(jsonData)
         //console.log(`process Success!!`)
@@ -89,8 +89,18 @@ let server = http.createServer((req, res)=>{
           console.log(`catch`)
         }
       })
+      req.on('close',(some)=>{
+        if(res.statusCode===200){
+          console.log("여어기이야아아!!!")
+          res.end() // todo tracking tracking tracking
+          console.log(some)
+          console.dir(some)
+        }
+      })
     }
   }
+  console.log(req.url)
+  console.log(res.url)
 });
 
 let PORT = 8080
